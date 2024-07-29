@@ -1,1 +1,2 @@
 # DigitalClock-2
+THIS CLOCK IS FROM https://primeelements.pro/. IF YOU WANT MORE PROJECTS, WEB COMPONENTS, PAGES, SECTIONS, TEMPLATES AND MOTION EFFECTS VISIT https://primeelements.pro/
