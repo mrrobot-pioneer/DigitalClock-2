@@ -1,0 +1,173 @@
+/* import Google Fonts >> Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/*targeting all elements*/
+* {
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2f363e;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 40px rgba(0, 0, 0, 0.6), 5px 5px 30px rgba(0, 0, 0, 0.25),
+    inset 3px 3px 10px rgba(0, 0, 0, 0.5),
+    inset 3px 3px 15px rgba(255, 255, 255, 0.2),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  border-top-right-radius: 150px;
+  border-top-left-radius: 150px;
+  background-color: #2f363e;
+}
+
+.clock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  box-shadow: 10px 30px 50px rgba(0, 0, 0, 0.6),
+    inset 3px 3px 10px rgba(0, 0, 0, 0.5),
+    inset 3px 3px 15px rgba(255, 255, 255, 0.2),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.75);
+  margin-bottom: 20px;
+  background-color: #2f363e;
+}
+
+.clock::before {
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #2f363e;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.clock span {
+  position: absolute;
+  inset: 15px;
+  color: #fff;
+  text-align: center;
+  transform: rotate(calc(30deg * var(--i)));
+  /* 360deg / 12 = 30*/
+}
+
+.clock span b {
+  font-size: 18px;
+  opacity: 0.45;
+  font-weight: 600;
+  display: inline-block;
+  transform: rotate(calc(-30deg * var(--i)));
+}
+
+.clock .circle {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+.clock .circle:nth-child(2) {
+  width: 120px;
+  height: 120px;
+}
+
+.clock .circle:nth-child(3) {
+  width: 80px;
+  height: 80px;
+}
+
+.clock .circle i {
+  position: absolute;
+  height: 50%;
+  background-color: var(--clr);
+}
+
+.clock .circle:nth-child(1) i {
+  width: 1px;
+  z-index: 100;
+}
+
+.clock .circle:nth-child(2) i {
+  width: 2px;
+  z-index: 50;
+}
+
+.clock .circle:nth-child(3) i {
+  width: 10px;
+  z-index: 20;
+  clip-path: polygon(50% 0%, 60% 0%, 100% 100%, 0% 100%);
+}
+
+/* DIGITAL CLOCK*/
+.digital {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  padding: 8px 20px;
+  font-size: 20px;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: 700;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+
+.digital div {
+  position: relative;
+  color: var(--clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+.digital div:nth-child(1)::after,
+.digital div:nth-child(2)::after {
+  position: absolute;
+  content: ":";
+  right: -4px;
+}
+
+.digital div::after {
+  animation: steps 1s steps(1) infinite;
+}
+
+.am-pm {
+  font-size: 13px;
+  margin: auto;
+}
+
+@keyframes steps {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
